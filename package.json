@@ -1,7 +1,6 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "type": "module",
   "description": "Ejercicios con Node JS",
   "main": "index.js",
   "scripts": {

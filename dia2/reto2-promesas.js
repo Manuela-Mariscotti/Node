@@ -1,19 +1,10 @@
+const fs = require('fs/promises');
+
 let persona = {
     name : "Juan",
     surname : "Perez",
     age : "30"
 }
-
-let mascota = {
-    name : "Darcy",
-    surname : "Perrotti",
-    animal : "dog",
-    age : "5"
-}
-
-
-const fs = require('fs/promises'); 
-
 fs.writeFile("persona.JSON",JSON.stringify(persona))
 .then( () =>{
     return fs.readFile("persona.JSON", "utf-8")
@@ -25,6 +16,15 @@ fs.writeFile("persona.JSON",JSON.stringify(persona))
     console.log(err);
 })
 
+
+
+
+let mascota = {
+    name : "Darcy",
+    surname : "Perrotti",
+    animal : "dog",
+    age : "5"
+}
 // mascota = null;
 async function asyncAwait(){
     try{

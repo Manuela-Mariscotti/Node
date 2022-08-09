@@ -8,6 +8,6 @@ let mascota = {
     age : "5"
 }
 
-// myLib.writeAndRead("mascotas1.json",mascota);
+myLib.writeAndRead("mascotas1.json",mascota);
 
 myLib2.readConsole("persona2.json")

@@ -23,6 +23,9 @@ async function asyncAwait(){
     persona.nombre = await pregunta("Ingresa nombre : ")
     persona.apellido = await pregunta("Ingresa apellido : ")
     persona.edad = await pregunta("Ingresa edad : ")
-    console.log(persona);
+
+    await fs.writeFile("persona1.JSON", JSON.stringify(persona))
+    const nuevo = await fs.readFile("persona1.JSON","utf-8")
+    console.log(JSON.parse(nuevo));
 }
 asyncAwait()

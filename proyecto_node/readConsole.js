@@ -1,4 +1,4 @@
-function readConsole(callback){
+function readConsole(path){
 
     const fs = require('fs'); 
 
@@ -23,16 +23,14 @@ function readConsole(callback){
                 persona.edad = edad
                 rl.close();
                 let data = JSON.stringify(persona)
-                fs.writeFile("persona.JSON",data,()=>{
-                    fs.readFile("persona.JSON", ()=>{
+                fs.writeFile(path,data,()=>{
+                    fs.readFile(path, ()=>{
                     console.log(JSON.parse(data));
                     })
                 })
             });
         });
-    });
-    
-
+    })
 }
 
 module.exports = {readConsole}

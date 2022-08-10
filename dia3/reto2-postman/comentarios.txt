@@ -1,0 +1,3 @@
+En los cuatro metodos me aparece lo mismo en postman.
+Deduzco que es debido a que no tengo nada en dentro de <html></html>.
+Aparece también el content-type. Fecha.

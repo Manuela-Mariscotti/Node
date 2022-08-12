@@ -8,8 +8,8 @@ router.get("/professional", professionalCtrl.getProfessional);
 
 router.post("/professional", professionalCtrl.postProfessional);
 
-router.put("./professional", professionalCtrl.putPorfessional);
+router.put("/professional", professionalCtrl.putProfessional);
 
-router.delete("./professional", professionalCtrl.deleteProfessional);
+router.delete("/professional", professionalCtrl.deleteProfessional);
 
 module.exports = router;

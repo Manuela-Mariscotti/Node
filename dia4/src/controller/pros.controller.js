@@ -1,11 +1,51 @@
 const { Professional } = require("../../models/professional.model");
 const app = require("../app");
 
-let usuario = null; 
+// let pros =[]; 
+let pros =[null]; 
 
-function getPros(req,res){
+function getPros(request,response){ 
     console.log('Lanzando la funcion getPros');
-    response.send(respuesta)
+    // let name = request.query.name;
+    // let respuesta;
+    // if(pros !=null && (!name || name ===pros.name))
+  
 }
 
-module.exports = {getPros}
+function postPros(request,response){
+    console.log('Lanzando la funcion postPros');
+    let respuesta;
+    console.log(request.body);
+    if(pros===null){
+        pros.push(new Professional(
+            request.body.name,
+            request.body.age,
+            request.body.genre,
+            request.body.weight,
+            request.body.height,
+            request.body.hairColor,
+            request.body.eyeColor,
+            request.body.race,
+            request.body.isRetired,
+            request.body.nacionality,
+            request.body.oscarNumber,
+            request.body.profession
+        ))
+        respuesta = {
+            error: false,
+            codigo: 200,
+            mensaje: "Profesional creado",
+            resultado: pros
+        }
+    }else{
+        respuesta = {
+            error: true,
+            codigo: 200,
+            mensaje: "Profesional ya existe",
+            resultado: null
+        }
+    }
+    response.send(respuesta);
+}
+
+module.exports = {getPros,postPros}

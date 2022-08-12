@@ -1,7 +1,10 @@
 const { Professional } = require("../../models/professional.model");
 const app = require("../app");
 
-let professional=null;
+// let professional=null;
+
+let professional = new Professional ("Leo DiCaprio",48,"male",80,190,"blonde","lightblue","white","false","american",1,"actor, producer")
+
 
 function getStart(request,response)
 {
@@ -15,7 +18,7 @@ function getProfessional(request,response)
     console.log('Lanzando la funcion getPro');
     let name = request.query.name;
     let respuesta;
-    if( professional !=null && (!name || name === professional.nombre)){
+    if( professional !=null && (!name || name === professional.name)){
         respuesta = professional;
     }else{
         respuesta = {

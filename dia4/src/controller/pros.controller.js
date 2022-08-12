@@ -68,8 +68,6 @@ function putPros(request,response){
         nameInicial = pros[i].name;
 
         if(nameNuevo == nameInicial){
-            console.log( nameInicial);
-            console.log(nameNuevo);
             pros[i].name = request.body.name;
             pros[i].age = request.body.age;
             pros[i].genre = request.body.genre;

@@ -1,10 +1,7 @@
 const { Professional } = require("../../models/professional.model");
 const app = require("../app");
 
-// let professional=null;
-
-let professional = new Professional ("Leo DiCaprio",48,"male",80,190,"blonde","lightblue","white","false","american",1,"actor, producer")
-
+let professional=null;
 
 function getStart(request,response)
 {
@@ -27,7 +24,7 @@ function getProfessional(request,response)
                     mensaje: "El profesional no existe"
         }
     }
-    response.send=(respuesta);
+    response.send(respuesta)
 }
 
 function postProfessional(request,response)

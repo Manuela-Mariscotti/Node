@@ -30,4 +30,4 @@ class Professional{
     }
 }
 
-module.exports = Professional;
+module.exports = {Professional};

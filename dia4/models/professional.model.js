@@ -1,5 +1,6 @@
 class Professional{
-    constructor (name, age,genre,weight,height,hairColor,eyeColor,race,isRetired,nacionality,oscarNumber,profession){
+    constructor (id ,name, age,genre,weight,height,hairColor,eyeColor,race,isRetired,nacionality,oscarNumber,profession){
+        this.id = id;
         this.name = name;
         this.age = age;
         this.genre = genre;
@@ -15,6 +16,7 @@ class Professional{
     }
 
     printProfessional(){
+        console.log(`Id : ${this.id}`);
         console.log(`Name : ${this.name}`);
         console.log(`Age : ${this.age}`);
         console.log(`Genre : ${this.genre}`);

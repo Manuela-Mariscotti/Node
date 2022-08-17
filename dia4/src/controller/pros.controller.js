@@ -1,13 +1,14 @@
 const { Professional } = require("../../models/professional.model");
 const app = require("../app");
 
-let RobertDeNiro = new Professional ("Robert DeNiro","80","male","90", "160","black","brown","white","false","american","2","actor, producer");
+let RobertDeNiro = new Professional ("1","Robert DeNiro","80","male","90", "160","black","brown","white","false","american","2","actor, producer");
 
-let SamuelLJackson = new Professional ("Samuel L. Jackson","65","male","90","160","black","brown","black","false","american","0","actor, producer");
+let SamuelLJackson = new Professional ("2","Samuel L. Jackson","65","male","90","160","black","brown","black","false","american","0","actor, producer");
 
-let TimRoth = new Professional ("Tim Roth","65","male","90","160","lightbrown","green","white","false","american","0","actor, producer");
+let TimRoth = new Professional ("3","Tim Roth","65","male","90","160","lightbrown","green","white","false","american","0","actor, producer");
 
-let pros = [RobertDeNiro, SamuelLJackson, TimRoth]
+// let pros = [RobertDeNiro, SamuelLJackson, TimRoth]
+let pros = []
 
 function getPros(request,response){ 
     console.log('Lanzando la funcion getPros');
@@ -35,6 +36,7 @@ function postPros(request,response){
     let respuesta;
     console.log(request.body);
     let pros1 = new Professional(
+        request.body.id,
         request.body.name,
         request.body.age,
         request.body.genre,
@@ -61,13 +63,13 @@ function postPros(request,response){
 function putPros(request,response){
     console.log('Lanzando la funcion putPros');
     let respuesta;
-    let nameInicial;
-    let nameNuevo=request.body.name
+    let idInicial;
+    let idNuevo=request.body.id
     
     for (let i = 0; i < pros.length; i++) {
-        nameInicial = pros[i].name;
-
-        if(nameNuevo == nameInicial){
+        idInicial = pros[i].id;
+        if(idNuevo == idInicial){
+            pros[i].id = request.body.id,
             pros[i].name = request.body.name;
             pros[i].age = request.body.age;
             pros[i].genre = request.body.genre;
@@ -92,15 +94,15 @@ function putPros(request,response){
 }
 
 function deletePros(request,response){
-    console.log('Lanzando la funcion putPros');
+    console.log('Lanzando la funcion deletePros');
     let respuesta;
-    let nameInicial;
-    let nameNuevo=request.body.name
-    
+    let idInicial;
+    let idNuevo=request.body.id
+    console.log(idNuevo);
     for (let i = 0; i < pros.length; i++) {
-        nameInicial = pros[i].name;
+        idInicial = pros[i].id;
 
-        if(nameNuevo == nameInicial){
+        if(idNuevo == idInicial){
             pros.splice(i,1)
             respuesta = {
                 error: false,

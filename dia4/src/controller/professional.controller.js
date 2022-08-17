@@ -34,6 +34,7 @@ function postProfessional(request,response)
     console.log(request.body);
     if(professional === null){
         professional = new Professional(
+                        request.body.id,
                         request.body.name,
                         request.body.age,
                         request.body.genre,
@@ -69,6 +70,7 @@ function putProfessional(request,response)
     console.log('Lanzando la funcion putPro');
     let respuesta;
     if(professional != null){
+        professional.id = request.body.id,
         professional.name = request.body.name;
         professional.age = request.body.age;
         professional.genre = request.body.genre;

@@ -14,7 +14,7 @@ router.post("/usuario",userCtrl.postUser);
 
 router.put("/usuario",userCtrl.putUser);
 
-router.delete("./usuario",userCtrl.deleteUser);
+router.delete("/usuario",userCtrl.deleteUser);
 
 
 

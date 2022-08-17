@@ -7,7 +7,8 @@ let SamuelLJackson = new Professional ("2","Samuel L. Jackson","65","male","90",
 
 let TimRoth = new Professional ("3","Tim Roth","65","male","90","160","lightbrown","green","white","false","american","0","actor, producer");
 
-let pros = [RobertDeNiro, SamuelLJackson, TimRoth]
+// let pros = [RobertDeNiro, SamuelLJackson, TimRoth]
+let pros = []
 
 function getPros(request,response){ 
     console.log('Lanzando la funcion getPros');
@@ -35,19 +36,19 @@ function postPros(request,response){
     let respuesta;
     console.log(request.body);
     let pros1 = new Professional(
-        request.body.id_id,
-        request.body.name_id,
-        request.body.age_id,
-        request.body.genre_id,
-        request.body.weight_id,
-        request.body.height_id,
-        request.body.hairColor_id,
-        request.body.eyeColor_id,
-        request.body.race_id,
-        request.body.isRetired_id,
-        request.body.nacionality_id,
-        request.body.oscarNumber_id,
-        request.body.profession_id
+        request.body.id,
+        request.body.name,
+        request.body.age,
+        request.body.genre,
+        request.body.weight,
+        request.body.height,
+        request.body.hairColor,
+        request.body.eyeColor,
+        request.body.race,
+        request.body.isRetired,
+        request.body.nacionality,
+        request.body.oscarNumber,
+        request.body.profession
     )
     pros.push(pros1)
     respuesta = {
@@ -62,26 +63,25 @@ function postPros(request,response){
 function putPros(request,response){
     console.log('Lanzando la funcion putPros');
     let respuesta;
-    let nameInicial;
-    let nameNuevo=request.body.name
+    let idInicial;
+    let idNuevo=request.body.id
     
     for (let i = 0; i < pros.length; i++) {
-        nameInicial = pros[i].name;
-
-        if(nameNuevo == nameInicial){
-            pros[i].id = request.body.id_id,
-            pros[i].name = request.body.name_id;
-            pros[i].age = request.body.age_id;
-            pros[i].genre = request.body.genre_id;
-            pros[i].weight = request.body.weight_id;
-            pros[i].height = request.body.height_id;
-            pros[i].hairColor = request.body.hairColor_id;
-            pros[i].eyeColor = request.body.eyeColor_id;
-            pros[i].race = request.body.race_id;
-            pros[i].isRetired = request.body.isRetired_id;
-            pros[i].nacionality = request.body.nacionality_id;
-            pros[i].oscarNumber = request.body.oscarNumber_id;
-            pros[i].profession = request.body.profession_id;
+        idInicial = pros[i].id;
+        if(idNuevo == idInicial){
+            pros[i].id = request.body.id,
+            pros[i].name = request.body.name;
+            pros[i].age = request.body.age;
+            pros[i].genre = request.body.genre;
+            pros[i].weight = request.body.weight;
+            pros[i].height = request.body.height;
+            pros[i].hairColor = request.body.hairColor;
+            pros[i].eyeColor = request.body.eyeColor;
+            pros[i].race = request.body.race;
+            pros[i].isRetired = request.body.isRetired;
+            pros[i].nacionality = request.body.nacionality;
+            pros[i].oscarNumber = request.body.oscarNumber;
+            pros[i].profession = request.body.profession;
             respuesta = {
                 error: false,
                 codigo: 200,
@@ -94,15 +94,15 @@ function putPros(request,response){
 }
 
 function deletePros(request,response){
-    console.log('Lanzando la funcion putPros');
+    console.log('Lanzando la funcion deletePros');
     let respuesta;
-    let nameInicial;
-    let nameNuevo=request.body.name_id
-    
+    let idInicial;
+    let idNuevo=request.body.id
+    console.log(idNuevo);
     for (let i = 0; i < pros.length; i++) {
-        nameInicial = pros[i].name;
+        idInicial = pros[i].id;
 
-        if(nameNuevo == nameInicial){
+        if(idNuevo == idInicial){
             pros.splice(i,1)
             respuesta = {
                 error: false,

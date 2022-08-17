@@ -1,0 +1,10 @@
+.row-1{
+    width: 300px;
+
+}
+.table-display{
+    display:none;
+}
+.table-display2{
+    display: initial;
+}
